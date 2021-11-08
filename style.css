@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+
+body {
+  font-family: "Fruktur", cursive;
+  padding: 0;
+  margin: 0;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  min-height: 130vh;
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom, #04355e, #000);
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+#title {
+  color: orange;
+  font-size: 5rem;
+  text-align: center;
+  position: absolute;
+  top: -200px;
+  width: 100%;
+}
+
+#moon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  right: 1rem;
+  padding: 3rem;
+  width: 10rem;
+}
+
+.bat-group {
+  position: absolute;
+  width: 30rem;
+  height: 30rem;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+}
+
+.bat {
+  width: 4rem;
+}
+
+.bat-group img {
+  position: absolute;
+}
+
+.bat-group img:nth-child(1) {
+  top: 1rem;
+  left: 1rem;
+}
+
+.bat-group img:nth-child(2) {
+  top: 5rem;
+  left: 2rem;
+  width: 9rem;
+  transform: rotate(-40deg);
+}
+.bat-group img:nth-child(3) {
+  top: 10rem;
+  left: 7rem;
+  width: 6rem;
+  transform: rotate(-20deg);
+}
+.bat-group img:nth-child(4) {
+  top: 3rem;
+  left: 10rem;
+  width: 2rem;
+  transform: rotate(30deg);
+}
+.bat-group img:nth-child(5) {
+  top: 24rem;
+  left: 10rem;
+  width: 5rem;
+  transform: rotate(10deg);
+}
+.bat-group img:nth-child(6) {
+  top: 14rem;
+  left: 17rem;
+  width: 3rem;
+  transform: rotate(40deg);
+}
+.bat-group img:nth-child(7) {
+  top: 22rem;
+  left: 17rem;
+  width: 3rem;
+  transform: rotate(-30deg);
+}
+.bat-group img:nth-child(8) {
+  top: 13rem;
+  left: 3rem;
+  transform: rotate(-10deg);
+}
+#coco {
+  width: 20rem;
+  position: fixed;
+  left: 100%;
+  top: 500px;
+  z-index: 100;
+}
+
+#coco.move {
+  transition: all 3s ease-in-out;
+  left: 0;
+  top: 100px;
+}
+
+#dog {
+  width: 10rem;
+  position: fixed;
+  left: 100%;
+  bottom: 0;
+  z-index: 100;
+}
+
+#dog.move {
+  transition: all 3s ease-in-out;
+  left: 100px;
+}
+
+.pumpkin-wrapper {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 1000px;
+}
+
+#pumpkin {
+  max-width: 400px;
+}

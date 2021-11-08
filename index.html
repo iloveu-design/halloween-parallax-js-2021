@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Halloween Mask - Parallax</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+    </head>
+    <body>
+        <div class="bg">
+            <img src="images/moon.png" alt="moon" id="moon">
+            <h1 id="title">Halloween with Mask</h1>
+            <div class="bat-group animate__animated animate__flash animate__infinite">
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+                <img src="images/bat.png" alt="bat" class="bat">
+            </div>
+            <img src="images/coco.png" id="coco" atl="coco">
+            <img src="images/dog.gif" id="dog" alt="running dog">
+            <div class="pumpkin-wrapper" id="pumpkinWrapper">
+                <img src="images/pumpkin.png" id="pumpkin" alt="pumpkin">
+
+            </div>
+
+
+        </div>
+        <script>
+            let moon = document.getElementById("moon");
+            let title = document.getElementById("title");
+            let bat = document.querySelector(".bat-group");
+            const intViewPortWidth = window.innerWidth;
+
+            let coco = document.getElementById("coco");
+            let animateYet = true;
+
+            let pumpkinWrapper = document.getElementById("pumpkinWrapper");
+            let pumpkin = document.getElementById("pumpkin");
+
+            const addPulse = () => {
+                pumpkin.classList.add("animate__animated");
+                pumpkin.classList.add("animate__pulse");
+                pumpkin.classList.add("animate__infinite");
+            }
+
+            const removeRotate = () => {
+                pumpkin.classList.remove("animate__animated");
+                pumpkin.classList.remove("animate__rotateIn");
+            }
+
+            window.addEventListener("scroll", function() {
+                let value = window.scrollY;
+
+                moon.style.top = value * .5 + "px";
+                title.style.top = -200 + value * 3 + "px";
+
+                if ((-200 + value * 3 ) > 300) {
+                    title.style.top = 300 + "px";
+                }
+
+                bat.style.left = intViewPortWidth - value * 3 + "px";
+
+                pumpkinWrapper.style.top = 1000 - value * 3 + "px";
+                if((1000 - value * 3) < 500) {
+                    pumpkinWrapper.style.top = 500 + "px";
+                    if (animateYet){
+                        pumpkin.classList.add("animate__animated");
+                        pumpkin.classList.add("animate__rotateIn");
+
+                        setTimeout(removeRotate, 1000);
+                        setTimeout(addPulse, 1000);
+
+                        coco.classList.add("move");
+                        dog.classList.add("move");
+                        animateYet = false;
+                    }
+                }
+
+                
+            });
+        </script>
+    </body>
+</html>
